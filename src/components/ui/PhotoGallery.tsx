@@ -1,13 +1,11 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 interface Photo {
   src: string
   alt: string
-  position?: string // Custom object-position for this image
+  position?: string
 }
 
 interface PhotoGalleryProps {
@@ -15,98 +13,153 @@ interface PhotoGalleryProps {
 }
 
 export function PhotoGallery({ photos }: PhotoGalleryProps) {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
-
-  // Auto-advance slideshow
-  useEffect(() => {
-    if (!isAutoPlaying) return
-
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % photos.length)
-    }, 5000) // Change image every 5 seconds
-
-    return () => clearInterval(interval)
-  }, [isAutoPlaying, photos.length])
-
-  const goToPrevious = () => {
-    setIsAutoPlaying(false)
-    setCurrentIndex((prev) => (prev - 1 + photos.length) % photos.length)
-  }
-
-  const goToNext = () => {
-    setIsAutoPlaying(false)
-    setCurrentIndex((prev) => (prev + 1) % photos.length)
-  }
-
-  const goToSlide = (index: number) => {
-    setIsAutoPlaying(false)
-    setCurrentIndex(index)
-  }
-
   return (
-    <div className="relative w-full max-w-5xl mx-auto">
-      {/* Main Image Container */}
-      <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-black">
-        {photos.map((photo, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentIndex ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
-            <Image
-              src={photo.src}
-              alt={photo.alt}
-              fill
-              className="object-cover"
-              style={{ objectPosition: photo.position || 'center' }}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-              priority={index === 0}
-            />
-          </div>
-        ))}
-
-        {/* Gradient Overlays for better button visibility */}
-        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black/40 to-transparent pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black/40 to-transparent pointer-events-none" />
-
-        {/* Navigation Buttons */}
-        <button
-          onClick={goToPrevious}
-          className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 text-white hover:bg-accent hover:text-background transition-all backdrop-blur-sm"
-          aria-label="Previous image"
-        >
-          <ChevronLeft size={24} />
-        </button>
-        <button
-          onClick={goToNext}
-          className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/50 text-white hover:bg-accent hover:text-background transition-all backdrop-blur-sm"
-          aria-label="Next image"
-        >
-          <ChevronRight size={24} />
-        </button>
-
-        {/* Image Counter */}
-        <div className="absolute bottom-4 left-4 px-3 py-1 rounded-full bg-black/50 text-white text-sm backdrop-blur-sm">
-          {currentIndex + 1} / {photos.length}
-        </div>
-      </div>
-
-      {/* Dot Indicators */}
-      <div className="flex items-center justify-center gap-2 mt-6">
-        {photos.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`h-2 rounded-full transition-all ${
-              index === currentIndex
-                ? 'w-8 bg-accent'
-                : 'w-2 bg-border hover:bg-muted'
-            }`}
-            aria-label={`Go to image ${index + 1}`}
+    <div className="relative w-full max-w-7xl mx-auto">
+      {/* Asymmetric Grid Collage Layout */}
+      <div className="grid grid-cols-12 gap-4 auto-rows-[200px]">
+        {/* Image 1 - Large */}
+        <div className="col-span-12 md:col-span-5 row-span-2 group relative overflow-hidden rounded-lg">
+          <Image
+            src={photos[0].src}
+            alt={photos[0].alt}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            style={{ objectPosition: photos[0].position || 'center' }}
           />
-        ))}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+        </div>
+
+        {/* Image 2 - Medium */}
+        <div className="col-span-6 md:col-span-4 row-span-1 group relative overflow-hidden rounded-lg">
+          <Image
+            src={photos[1].src}
+            alt={photos[1].alt}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            style={{ objectPosition: photos[1].position || 'center' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+        </div>
+
+        {/* Image 3 - Medium */}
+        <div className="col-span-6 md:col-span-3 row-span-1 group relative overflow-hidden rounded-lg">
+          <Image
+            src={photos[2].src}
+            alt={photos[2].alt}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            style={{ objectPosition: photos[2].position || 'center' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+        </div>
+
+        {/* Image 4 - Tall */}
+        <div className="col-span-6 md:col-span-3 row-span-2 group relative overflow-hidden rounded-lg">
+          <Image
+            src={photos[3].src}
+            alt={photos[3].alt}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            style={{ objectPosition: photos[3].position || 'center' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+        </div>
+
+        {/* Image 5 - Medium */}
+        <div className="col-span-6 md:col-span-4 row-span-1 group relative overflow-hidden rounded-lg">
+          <Image
+            src={photos[4].src}
+            alt={photos[4].alt}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            style={{ objectPosition: photos[4].position || 'center' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+        </div>
+
+        {/* Image 6 - Wide */}
+        <div className="col-span-12 md:col-span-6 row-span-1 group relative overflow-hidden rounded-lg">
+          <Image
+            src={photos[5].src}
+            alt={photos[5].alt}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            style={{ objectPosition: photos[5].position || 'center' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+        </div>
+
+        {/* Image 7 - Medium */}
+        <div className="col-span-6 md:col-span-3 row-span-1 group relative overflow-hidden rounded-lg">
+          <Image
+            src={photos[6].src}
+            alt={photos[6].alt}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            style={{ objectPosition: photos[6].position || 'center' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+        </div>
+
+        {/* Image 8 - Medium */}
+        <div className="col-span-6 md:col-span-3 row-span-1 group relative overflow-hidden rounded-lg">
+          <Image
+            src={photos[7].src}
+            alt={photos[7].alt}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            style={{ objectPosition: photos[7].position || 'center' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+        </div>
+
+        {/* Image 9 - Large */}
+        <div className="col-span-12 md:col-span-7 row-span-2 group relative overflow-hidden rounded-lg">
+          <Image
+            src={photos[8].src}
+            alt={photos[8].alt}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            style={{ objectPosition: photos[8].position || 'center' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+        </div>
+
+        {/* Image 10 - Tall */}
+        <div className="col-span-6 md:col-span-5 row-span-2 group relative overflow-hidden rounded-lg">
+          <Image
+            src={photos[9].src}
+            alt={photos[9].alt}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            style={{ objectPosition: photos[9].position || 'center' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+        </div>
+
+        {/* Image 11 - Wide */}
+        <div className="col-span-12 md:col-span-6 row-span-1 group relative overflow-hidden rounded-lg">
+          <Image
+            src={photos[10].src}
+            alt={photos[10].alt}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            style={{ objectPosition: photos[10].position || 'center' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+        </div>
+
+        {/* Image 12 - Medium */}
+        <div className="col-span-6 md:col-span-4 row-span-1 group relative overflow-hidden rounded-lg">
+          <Image
+            src={photos[11].src}
+            alt={photos[11].alt}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            style={{ objectPosition: photos[11].position || 'center' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+        </div>
       </div>
     </div>
   )
