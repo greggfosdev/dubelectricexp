@@ -19,36 +19,57 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dubelectricexp.com'
 
 export const metadata: Metadata = {
   title: {
-    default: "Dub Electric — High-Energy DJ Collective",
+    default: "Dub Electric — Dancehall & Reggae DJ Collective",
     template: "%s | Dub Electric"
   },
-  description: "Dub Electric is a high-energy DJ collective rooted in sound system culture. Listen to our latest mixes, catch us live, and book us for your next event.",
-  keywords: ["DJ collective", "Dub Electric", "sound system", "electronic music", "live sets", "NYC DJs", "booking"],
+  description: "Dub Electric is a dancehall and reggae DJ collective rooted in sound system culture. Stream our latest mixes on SoundCloud, catch us live at events, and book us for your next session.",
+  keywords: [
+    "Dub Electric",
+    "dancehall DJ",
+    "reggae DJ",
+    "sound system",
+    "DJ collective",
+    "dancehall music",
+    "reggae music",
+    "Atlanta DJ",
+    "Florida DJ",
+    "Belize events",
+    "Caribbean music",
+    "bashment",
+    "roots reggae",
+    "DJ booking",
+    "live events",
+    "SoundCloud DJ",
+  ],
   authors: [{ name: "Dub Electric" }],
   creator: "Dub Electric",
   publisher: "Dub Electric",
   metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: siteUrl,
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    title: "Dub Electric — High-Energy DJ Collective",
-    description: "High-energy DJ collective rooted in sound system culture. Listen, catch us live, or book a session.",
+    title: "Dub Electric — Dancehall & Reggae DJ Collective",
+    description: "Dancehall and reggae DJ collective rooted in sound system culture. Stream our latest mixes, catch us live, and book us for your next event.",
     siteName: "Dub Electric",
     images: [
       {
         url: `${siteUrl}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: "Dub Electric",
+        alt: "Dub Electric - Dancehall & Reggae Sound System",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dub Electric — High-Energy DJ Collective",
-    description: "High-energy DJ collective rooted in sound system culture. Listen, catch us live, or book a session.",
+    title: "Dub Electric — Dancehall & Reggae DJ Collective",
+    description: "Dancehall and reggae DJ collective rooted in sound system culture. Stream our latest mixes, catch us live, and book us.",
     images: [`${siteUrl}/og-image.jpg`],
+    creator: "@dubelectricexp",
   },
   robots: {
     index: true,
@@ -61,6 +82,9 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  },
 };
 
 export default async function RootLayout({
@@ -70,18 +94,33 @@ export default async function RootLayout({
 }>) {
   const siteConfig = await getSiteConfig()
 
-  // JSON-LD Schema for Organization
+  // JSON-LD Schema for Music Group
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'MusicGroup',
     name: 'Dub Electric',
-    description: 'High-energy DJ collective rooted in sound system culture',
+    alternateName: 'Dub Electric EXP',
+    description: 'Dancehall and reggae DJ collective rooted in sound system culture',
     url: siteUrl,
+    genre: ['Dancehall', 'Reggae', 'Caribbean', 'Bashment', 'Roots Reggae'],
+    foundingDate: '2015',
+    foundingLocation: {
+      '@type': 'Place',
+      name: 'NYC',
+    },
     sameAs: [
       siteConfig.social.soundcloud,
       siteConfig.social.instagram,
+      siteConfig.social.facebook,
+      siteConfig.social.tiktok,
     ],
-    email: siteConfig.social.email,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      email: siteConfig.social.email,
+      contactType: 'Bookings',
+    },
+    logo: `${siteUrl}/logo.png`,
+    image: `${siteUrl}/og-image.jpg`,
   }
 
   return (
