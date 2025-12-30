@@ -13,29 +13,27 @@ export function EventRow({ event }: EventRowProps) {
   const dayNum = eventDate.toLocaleDateString('en-US', { day: 'numeric' })
 
   return (
-    <div className="group flex items-center justify-between py-6 border-b border-border/30 hover:border-accent/30 transition-colors">
+    <div className="group flex items-start justify-between py-8 border-b border-border/30 hover:border-accent/30 transition-colors">
       {/* Date */}
-      <div className="flex items-baseline gap-2 min-w-[100px]">
-        <time className="text-2xl font-bold text-foreground tracking-tight">
+      <div className="flex items-baseline gap-2 min-w-[120px] pt-1">
+        <time className="text-4xl font-bold text-foreground tracking-tight">
           {monthShort} {dayNum}
         </time>
       </div>
 
       {/* Location & Event Details */}
-      <div className="flex-1 px-6">
-        <div className="flex items-baseline gap-2">
-          <h3 className="text-base font-bold text-foreground uppercase tracking-wide">
+      <div className="flex-1 px-8">
+        <div className="flex items-baseline gap-3 flex-wrap">
+          <h3 className="text-xl font-bold text-foreground uppercase tracking-wide">
             {event.city}
           </h3>
           {event.note && (
-            <span className="text-xs text-muted uppercase tracking-wide">
+            <span className="text-sm text-muted uppercase tracking-wide">
               {event.note}
             </span>
           )}
         </div>
-        <div className="flex items-center gap-2 mt-1">
-          <p className="text-sm text-muted">{event.title}</p>
-        </div>
+        <p className="text-base text-muted mt-2">{event.title}</p>
       </div>
 
       {/* CTA */}
@@ -44,7 +42,7 @@ export function EventRow({ event }: EventRowProps) {
           href={event.ticketUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="group/btn inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background text-xs font-bold uppercase tracking-wider hover:bg-accent transition-colors"
+          className="group/btn inline-flex items-center gap-2 px-8 py-4 bg-foreground text-background text-sm font-bold uppercase tracking-wider hover:bg-accent transition-colors shrink-0"
         >
           Get Tickets
           <svg className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
