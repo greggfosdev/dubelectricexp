@@ -70,7 +70,7 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="text-sm font-medium text-muted hover:text-foreground transition-colors cursor-pointer"
+                  className="text-base font-semibold text-foreground hover:text-accent transition-all cursor-pointer uppercase tracking-wide hover:scale-105"
                 >
                   {link.label}
                 </a>
