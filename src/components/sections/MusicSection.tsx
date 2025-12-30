@@ -19,7 +19,7 @@ export function MusicSection({ music }: MusicSectionProps) {
             Latest Releases
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-            LATEST DROPS
+            MUSIC
           </h2>
           <p className="text-lg md:text-xl text-muted max-w-2xl mx-auto">
             Fresh mixes and selections from the collective. Turn it up.

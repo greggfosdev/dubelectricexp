@@ -21,11 +21,17 @@ export function GallerySection() {
     <Section id="gallery" className="bg-border/10">
       <div className="space-y-12">
         {/* Section Header */}
-        <div className="text-center space-y-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+        <div className="text-center space-y-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-sm font-medium">
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+            </svg>
+            Photo Gallery
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
             MOMENTS
           </h2>
-          <p className="text-lg text-muted max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted max-w-2xl mx-auto">
             From the sessions to the stages—catch the vibe.
           </p>
         </div>
