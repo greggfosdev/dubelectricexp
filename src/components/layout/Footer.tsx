@@ -17,9 +17,9 @@ export function Footer({ siteConfig }: FooterProps) {
           <Image
             src="/logo.png"
             alt="Dub Electric"
-            width={200}
-            height={45}
-            className="h-10 w-auto"
+            width={280}
+            height={60}
+            className="h-12 w-auto"
             style={{ filter: 'brightness(0) invert(1)' }}
           />
 

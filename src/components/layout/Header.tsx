@@ -55,9 +55,9 @@ export function Header() {
               <Image
                 src="/logo.png"
                 alt="Dub Electric"
-                width={180}
-                height={40}
-                className="h-8 w-auto"
+                width={280}
+                height={60}
+                className="h-12 md:h-14 w-auto"
                 style={{ filter: 'brightness(0) invert(1)' }}
                 priority
               />
