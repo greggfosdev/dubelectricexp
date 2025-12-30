@@ -106,11 +106,20 @@ export function Hero({ siteConfig }: HeroProps) {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-        <div className="w-6 h-10 border-2 border-accent/50 rounded-full flex items-start justify-center p-2">
-          <div className="w-1 h-3 bg-accent rounded-full" />
-        </div>
-      </div>
+      <button
+        onClick={() => {
+          window.scrollTo({
+            top: window.innerHeight,
+            behavior: 'smooth'
+          })
+        }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce hover:text-accent transition-colors cursor-pointer"
+        aria-label="Scroll down"
+      >
+        <svg className="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </button>
     </div>
   )
 }
