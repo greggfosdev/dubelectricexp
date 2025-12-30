@@ -6,14 +6,21 @@ interface TestimonialCardProps {
 
 export function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
-    <div className="group flex flex-col gap-4 p-6 border border-border rounded-lg bg-background hover:border-accent/50 transition-all">
+    <div className="group relative flex flex-col gap-6 p-8 bg-gradient-to-br from-border/5 to-border/10 border border-border/50 rounded-2xl hover:border-accent/50 hover:shadow-xl hover:shadow-accent/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+      {/* Quote Icon Background */}
+      <div className="absolute top-4 right-4 text-accent/5 group-hover:text-accent/10 transition-colors">
+        <svg className="w-24 h-24" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+        </svg>
+      </div>
+
       {/* Rating Stars */}
       {testimonial.rating && (
-        <div className="flex items-center gap-1">
+        <div className="relative flex items-center gap-1">
           {Array.from({ length: testimonial.rating }).map((_, i) => (
             <svg
               key={i}
-              className="w-4 h-4 text-accent"
+              className="w-5 h-5 text-accent drop-shadow-sm"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -24,22 +31,22 @@ export function TestimonialCard({ testimonial }: TestimonialCardProps) {
       )}
 
       {/* Quote */}
-      <blockquote className="text-base text-foreground leading-relaxed">
+      <blockquote className="relative text-lg text-foreground leading-relaxed font-medium">
         "{testimonial.quote}"
       </blockquote>
 
       {/* Author Info */}
-      <div className="flex items-center gap-4 pt-4 border-t border-border/50">
-        {/* Avatar Placeholder */}
+      <div className="relative flex items-center gap-4">
+        {/* Avatar */}
         {testimonial.image ? (
           <img
             src={testimonial.image}
             alt={testimonial.name}
-            className="w-12 h-12 rounded-full object-cover"
+            className="w-14 h-14 rounded-full object-cover ring-2 ring-accent/20"
           />
         ) : (
-          <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
-            <span className="text-accent font-bold text-lg">
+          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center ring-2 ring-accent/20">
+            <span className="text-accent font-bold text-xl">
               {testimonial.name.charAt(0)}
             </span>
           </div>
@@ -47,15 +54,15 @@ export function TestimonialCard({ testimonial }: TestimonialCardProps) {
 
         {/* Name and Role */}
         <div className="flex-1 min-w-0">
-          <p className="text-sm font-semibold text-foreground truncate">
+          <p className="text-base font-bold text-foreground">
             {testimonial.name}
           </p>
-          <p className="text-xs text-muted truncate">
+          <p className="text-sm text-muted">
             {testimonial.role}
             {testimonial.company && ` • ${testimonial.company}`}
           </p>
           {testimonial.eventType && (
-            <p className="text-xs text-accent mt-1">
+            <p className="text-xs text-accent mt-1 font-medium">
               {testimonial.eventType}
             </p>
           )}
