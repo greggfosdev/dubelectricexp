@@ -9,6 +9,11 @@ const photos = [
   { src: '/gallery/5.jpg', alt: 'Dub Electric collective', position: 'center 35%' },
   { src: '/gallery/6.jpg', alt: 'Dub Electric live set', position: 'center 20%' },
   { src: '/gallery/7.jpg', alt: 'Dub Electric event moment', position: 'center 5%' },
+  { src: '/gallery/8.jpg', alt: 'Dub Electric DJ booth setup', position: 'center center' },
+  { src: '/gallery/9.jpg', alt: 'Dub Electric equipment rack', position: 'center center' },
+  { src: '/gallery/10.jpg', alt: 'Dub Electric sound system speakers', position: 'center center' },
+  { src: '/gallery/11.jpg', alt: 'Dub Electric crew at work', position: 'center 30%' },
+  { src: '/gallery/12.jpg', alt: 'Dub Electric DJs mixing', position: 'center 20%' },
 ]
 
 export function GallerySection() {
