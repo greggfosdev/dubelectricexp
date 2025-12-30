@@ -34,7 +34,7 @@ export function EventsSection({ events }: EventsSectionProps) {
       <Section id="events" className="bg-background">
         <div className="space-y-16">
           {/* Section Header */}
-          <div className="space-y-2">
+          <div className="space-y-2 text-center">
             <p className="text-xs font-bold text-muted uppercase tracking-widest">
               Tour Dates
             </p>
