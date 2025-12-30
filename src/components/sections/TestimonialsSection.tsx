@@ -1,0 +1,45 @@
+import { Section } from '@/components/ui/Section'
+import { TestimonialCard } from '@/components/ui/TestimonialCard'
+import type { TestimonialsContent } from '@/types/content'
+
+interface TestimonialsSectionProps {
+  testimonials: TestimonialsContent
+}
+
+export function TestimonialsSection({ testimonials }: TestimonialsSectionProps) {
+  return (
+    <Section id="testimonials" className="bg-background">
+      <div className="space-y-12">
+        {/* Section Header */}
+        <div className="text-center space-y-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+            WHAT PEOPLE SAY
+          </h2>
+          <p className="text-lg text-muted max-w-2xl mx-auto">
+            From venues to festivals, here's what our clients have to say about working with us.
+          </p>
+        </div>
+
+        {/* Testimonials Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {testimonials.testimonials.map((testimonial) => (
+            <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div className="text-center pt-8">
+          <p className="text-muted mb-4">
+            Ready to work together?
+          </p>
+          <a
+            href="#contact"
+            className="inline-flex items-center justify-center px-8 py-4 text-base font-medium bg-accent text-background rounded-lg hover:bg-accent/90 transition-all"
+          >
+            Get in Touch
+          </a>
+        </div>
+      </div>
+    </Section>
+  )
+}

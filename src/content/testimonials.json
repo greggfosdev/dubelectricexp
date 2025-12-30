@@ -1,0 +1,25 @@
+{
+  "testimonials": [
+    {
+      "id": "testimonial-1",
+      "name": "Junior Thompson",
+      "role": "Promoter",
+      "quote": "Proper sound system vibes from start to finish. Dub Electric knows how to move a dance—their selection is heavyweight and they understand the culture. Real deal foundation music.",
+      "rating": 5
+    },
+    {
+      "id": "testimonial-2",
+      "name": "Marcia Williams",
+      "role": "Venue Manager",
+      "quote": "These guys brought that authentic reggae energy we've been missing. From roots to the latest bashment tunes, they had the whole place moving. Can't wait to book them again.",
+      "rating": 5
+    },
+    {
+      "id": "testimonial-3",
+      "name": "Selector Ranks",
+      "role": "Sound System Operator",
+      "quote": "Respect to Dub Electric. They come correct every time with pure vibes and wicked selections. They understand the power of the riddim and know how to build a proper session.",
+      "rating": 5
+    }
+  ]
+}

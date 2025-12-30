@@ -1,0 +1,39 @@
+{
+  "storefrontUrl": "https://dubelectric.store",
+  "featured": ["tee-black", "hat-classic"],
+  "items": [
+    {
+      "id": "tee-black",
+      "name": "Dub Electric Tee (Black)",
+      "price": 32,
+      "badge": "Made to order",
+      "shippingNote": "Typically ships in 3–7 business days",
+      "image": "/merch/tee-black.jpg",
+      "productUrl": "https://dubelectric.store/products/dub-electric-tee-black",
+      "sizeGuideUrl": "https://dubelectric.store/pages/size-guide"
+    },
+    {
+      "id": "hat-classic",
+      "name": "Dub Electric Hat",
+      "price": 28,
+      "badge": "Made to order",
+      "shippingNote": "Typically ships in 3–7 business days",
+      "image": "/merch/hat.jpg",
+      "productUrl": "https://dubelectric.store/products/dub-electric-hat"
+    },
+    {
+      "id": "hoodie-black",
+      "name": "Sound System Hoodie",
+      "price": 58,
+      "badge": "Made to order",
+      "shippingNote": "Typically ships in 5–10 business days",
+      "image": "/merch/hoodie.jpg",
+      "productUrl": "https://dubelectric.store/products/sound-system-hoodie",
+      "sizeGuideUrl": "https://dubelectric.store/pages/size-guide"
+    }
+  ],
+  "policy": {
+    "shipping": "Made to order. Shipping times vary by item and location. Tracking provided.",
+    "returns": "Returns accepted on unworn items within 30 days. Contact us if there's an issue."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "featured": [
+    {
+      "title": "Dancehall Session Volume 8",
+      "caption": "Pure dancehall vibes from start to finish.",
+      "embedSrc": "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dubelectricsound/dancehall-session-volume-8-explicit-lyrics&color=%2300ff99&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
+    },
+    {
+      "title": "WET Vol. 2",
+      "caption": "Heavyweight selections for the sound system.",
+      "embedSrc": "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dubelectricsound/wet-vol-2-explicit-language&color=%2300ff99&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
+    },
+    {
+      "title": "Playlist Vol. 3",
+      "caption": "Roots to bashment, freestyle session.",
+      "embedSrc": "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dubelectricsound/play-list-vol-3-reggae-and-dancehall-freestyle&color=%2300ff99&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false"
+    }
+  ],
+  "soundcloudProfileUrl": "https://soundcloud.com/dubelectricsound",
+  "nowPlaying": {
+    "title": "Dancehall Session Volume 8",
+    "url": "https://soundcloud.com/dubelectricsound/dancehall-session-volume-8-explicit-lyrics"
+  }
+}

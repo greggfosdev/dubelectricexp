@@ -1,0 +1,41 @@
+{
+  "upcoming": [
+    {
+      "id": "event-2026-01-10",
+      "date": "2026-01-10",
+      "title": "One Mission 6 Year Anniversary - Anything Can Gwaan",
+      "city": "Lithonia, GA",
+      "venue": "The Base",
+      "ticketUrl": "",
+      "note": "Doors 9PM • $25"
+    },
+    {
+      "id": "event-2026-01-24",
+      "date": "2026-01-24",
+      "title": "Open The Boxx - Xclusive Edition",
+      "city": "Lithonia, GA",
+      "venue": "The Base",
+      "ticketUrl": "",
+      "note": "All Black Wear Attire"
+    },
+    {
+      "id": "event-2026-01-30",
+      "date": "2026-01-30",
+      "title": "Hip-Hop vs Dancehall",
+      "city": "Kissimmee, FL",
+      "venue": "Lions Den Lounge",
+      "ticketUrl": "",
+      "note": "9PM - 2AM • Free Entry"
+    },
+    {
+      "id": "event-2026-03-06",
+      "date": "2026-03-06",
+      "title": "Destination Paradise Weekend 2026",
+      "city": "Belize City & San Pedro",
+      "venue": "Belize",
+      "ticketUrl": "https://destinationparadisebelize.eventbrite.com",
+      "note": "March 6-8 • Weekend Passes Available"
+    }
+  ],
+  "archive": []
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Dub Electric",
+  "tagline": "High-energy DJ collective rooted in sound system culture.",
+  "location": "NYC / Northeast",
+  "primaryAccent": "lime",
+  "social": {
+    "soundcloud": "https://soundcloud.com/dubelectricsound",
+    "instagram": "https://instagram.com/dubelectricexp",
+    "facebook": "https://facebook.com/dubelectricexp",
+    "tiktok": "https://tiktok.com/@dubelectricexp",
+    "email": "dubelectricexp@gmail.com"
+  },
+  "cta": {
+    "listenUrl": "https://soundcloud.com/dubelectricsound",
+    "bookAnchor": "#contact"
+  }
+}
