@@ -8,37 +8,34 @@ export function EventRow({ event }: EventRowProps) {
   // Parse date as local date to avoid timezone issues
   const [year, month, day] = event.date.split('-').map(Number)
   const eventDate = new Date(year, month - 1, day)
-  const formattedDate = eventDate.toLocaleDateString('en-US', {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric',
-  })
+
+  const monthShort = eventDate.toLocaleDateString('en-US', { month: 'short' }).toUpperCase()
+  const dayNum = eventDate.toLocaleDateString('en-US', { day: 'numeric' })
 
   return (
-    <div className="group relative flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 bg-border/5 border border-border/50 rounded-xl hover:border-accent/50 hover:bg-border/10 hover:shadow-lg hover:shadow-accent/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-      {/* Accent Glow on Hover */}
-      <div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/5 to-accent/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+    <div className="group flex items-center justify-between py-6 border-b border-border/30 hover:border-accent/30 transition-colors">
+      {/* Date */}
+      <div className="flex items-baseline gap-2 min-w-[100px]">
+        <time className="text-2xl font-bold text-foreground tracking-tight">
+          {monthShort} {dayNum}
+        </time>
+      </div>
 
-      {/* Event Details */}
-      <div className="relative flex-1 space-y-2">
-        <div className="flex items-center gap-3 flex-wrap">
-          <time className="inline-flex items-center px-3 py-1 text-xs font-bold text-background bg-accent rounded-full">
-            {formattedDate}
-          </time>
+      {/* Location & Event Details */}
+      <div className="flex-1 px-6">
+        <div className="flex items-baseline gap-2">
+          <h3 className="text-base font-bold text-foreground uppercase tracking-wide">
+            {event.city}
+          </h3>
           {event.note && (
-            <span className="text-xs text-muted bg-border/20 px-3 py-1 rounded-full">{event.note}</span>
+            <span className="text-xs text-muted uppercase tracking-wide">
+              {event.note}
+            </span>
           )}
         </div>
-        <h3 className="text-xl font-bold text-foreground group-hover:text-accent transition-colors">
-          {event.title}
-        </h3>
-        <p className="text-sm text-muted flex items-center gap-2">
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg>
-          {event.city} • {event.venue}
-        </p>
+        <div className="flex items-center gap-2 mt-1">
+          <p className="text-sm text-muted">{event.title}</p>
+        </div>
       </div>
 
       {/* CTA */}
@@ -47,10 +44,10 @@ export function EventRow({ event }: EventRowProps) {
           href={event.ticketUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="relative inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-bold bg-accent text-background rounded-lg hover:bg-accent/90 transition-all hover:scale-105 active:scale-95 shadow-md hover:shadow-lg hover:shadow-accent/50 whitespace-nowrap"
+          className="group/btn inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background text-xs font-bold uppercase tracking-wider hover:bg-accent transition-colors"
         >
           Get Tickets
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </a>

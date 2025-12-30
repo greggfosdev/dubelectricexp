@@ -13,6 +13,18 @@ interface EventsSectionProps {
 export function EventsSection({ events }: EventsSectionProps) {
   const [showPast, setShowPast] = useState(false)
 
+  // Group events by year
+  const eventsByYear = events.upcoming.reduce((acc, event) => {
+    const year = event.date.split('-')[0]
+    if (!acc[year]) {
+      acc[year] = []
+    }
+    acc[year].push(event)
+    return acc
+  }, {} as Record<string, typeof events.upcoming>)
+
+  const years = Object.keys(eventsByYear).sort()
+
   return (
     <>
       {/* Event Ticker */}
@@ -20,22 +32,34 @@ export function EventsSection({ events }: EventsSectionProps) {
 
       {/* Events Section */}
       <Section id="events" className="bg-background">
-        <div className="space-y-12">
+        <div className="space-y-16">
           {/* Section Header */}
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+          <div className="space-y-2">
+            <p className="text-xs font-bold text-muted uppercase tracking-widest">
+              Tour Dates
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground">
               CATCH US LIVE
             </h2>
-            <p className="text-lg text-muted max-w-2xl mx-auto">
-              Upcoming shows and events. Lock in early.
-            </p>
           </div>
 
-          {/* Upcoming Events */}
+          {/* Events Grouped by Year */}
           {events.upcoming.length > 0 ? (
-            <div className="space-y-4">
-              {events.upcoming.map((event) => (
-                <EventRow key={event.id} event={event} />
+            <div className="space-y-12">
+              {years.map((year) => (
+                <div key={year} className="space-y-0">
+                  {/* Year Header */}
+                  <h3 className="text-3xl font-bold text-foreground mb-8 tracking-tight">
+                    {year}
+                  </h3>
+
+                  {/* Events for this year */}
+                  <div>
+                    {eventsByYear[year].map((event) => (
+                      <EventRow key={event.id} event={event} />
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           ) : (
@@ -55,7 +79,7 @@ export function EventsSection({ events }: EventsSectionProps) {
               </button>
 
               {showPast && (
-                <div className="space-y-4 pt-4">
+                <div className="pt-4">
                   {events.archive.map((event) => (
                     <EventRow key={event.id} event={event} />
                   ))}
