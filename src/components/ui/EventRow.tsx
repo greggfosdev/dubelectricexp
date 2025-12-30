@@ -42,7 +42,7 @@ export function EventRow({ event }: EventRowProps) {
       </div>
 
       {/* CTA */}
-      {event.ticketUrl ? (
+      {event.ticketUrl && (
         <a
           href={event.ticketUrl}
           target="_blank"
@@ -54,10 +54,6 @@ export function EventRow({ event }: EventRowProps) {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </a>
-      ) : (
-        <div className="relative inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-muted">
-          Details coming soon
-        </div>
       )}
     </div>
   )
