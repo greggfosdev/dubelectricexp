@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 import { MobileNav } from './MobileNav'
 
@@ -49,9 +50,17 @@ export function Header() {
             {/* Logo */}
             <Link
               href="/"
-              className="text-xl font-bold tracking-tight text-foreground hover:text-accent transition-colors"
+              className="flex items-center hover:opacity-80 transition-opacity"
             >
-              Dub Electric
+              <Image
+                src="/logo.png"
+                alt="Dub Electric"
+                width={180}
+                height={40}
+                className="h-8 w-auto"
+                style={{ filter: 'brightness(0) invert(1)' }}
+                priority
+              />
             </Link>
 
             {/* Desktop Nav */}
