@@ -11,11 +11,17 @@ export function MerchSection({ merch }: MerchSectionProps) {
     <Section id="merch" className="bg-border/10">
       <div className="space-y-12">
         {/* Section Header */}
-        <div className="text-center space-y-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+        <div className="text-center space-y-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-sm font-medium">
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6h-4zM10 4h4v2h-4V4zm7 15H7V8h10v11z"/>
+            </svg>
+            Official Merch
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
             MERCH
           </h2>
-          <p className="text-lg text-muted max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted max-w-2xl mx-auto">
             Rep the collective. Premium gear for those who know.
           </p>
         </div>

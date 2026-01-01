@@ -1,39 +1,19 @@
 {
-  "storefrontUrl": "https://dubelectric.store",
-  "featured": ["tee-black", "hat-classic"],
+  "storefrontUrl": "https://dubelectricexp.printify.me",
+  "featured": ["logo-tee"],
   "items": [
     {
-      "id": "tee-black",
-      "name": "Dub Electric Tee (Black)",
-      "price": 32,
+      "id": "logo-tee",
+      "name": "Dub Electric Logo Short-Sleeve T-Shirt",
+      "price": 22.42,
       "badge": "Made to order",
-      "shippingNote": "Typically ships in 3–7 business days",
-      "image": "/merch/tee-black.jpg",
-      "productUrl": "https://dubelectric.store/products/dub-electric-tee-black",
-      "sizeGuideUrl": "https://dubelectric.store/pages/size-guide"
-    },
-    {
-      "id": "hat-classic",
-      "name": "Dub Electric Hat",
-      "price": 28,
-      "badge": "Made to order",
-      "shippingNote": "Typically ships in 3–7 business days",
-      "image": "/merch/hat.jpg",
-      "productUrl": "https://dubelectric.store/products/dub-electric-hat"
-    },
-    {
-      "id": "hoodie-black",
-      "name": "Sound System Hoodie",
-      "price": 58,
-      "badge": "Made to order",
-      "shippingNote": "Typically ships in 5–10 business days",
-      "image": "/merch/hoodie.jpg",
-      "productUrl": "https://dubelectric.store/products/sound-system-hoodie",
-      "sizeGuideUrl": "https://dubelectric.store/pages/size-guide"
+      "shippingNote": "Ships in 2–8 business days",
+      "image": "https://images-api.printify.com/mockup/695687c449b116fec3008837/71879/99932/dub-electric-logo-short-sleeve-t-shirt.jpg?camera_label=front&revision=1767278665578",
+      "productUrl": "https://dubelectricexp.printify.me/product/25957785/dub-electric-logo-short-sleeve-t-shirt"
     }
   ],
   "policy": {
     "shipping": "Made to order. Shipping times vary by item and location. Tracking provided.",
-    "returns": "Returns accepted on unworn items within 30 days. Contact us if there's an issue."
+    "returns": "30-day return policy on unworn items. Contact us if there's an issue."
   }
 }

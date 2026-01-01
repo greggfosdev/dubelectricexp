@@ -9,7 +9,7 @@ import { MobileNav } from './MobileNav'
 const navLinks = [
   { href: '#music', label: 'Music' },
   { href: '#events', label: 'Events' },
-  // { href: '#merch', label: 'Merch' },
+  { href: '#merch', label: 'Merch' },
   { href: '#history', label: 'History' },
   { href: '#gallery', label: 'Gallery' },
   { href: '#contact', label: 'Contact' },
