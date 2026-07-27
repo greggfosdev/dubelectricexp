@@ -1,4 +1,5 @@
 import { Hero } from '@/components/sections/Hero'
+import { ServicesSection } from '@/components/sections/ServicesSection'
 import { MusicSection } from '@/components/sections/MusicSection'
 import { EventsSection } from '@/components/sections/EventsSection'
 import { MerchSection } from '@/components/sections/MerchSection'
@@ -7,10 +8,19 @@ import { GallerySection } from '@/components/sections/GallerySection'
 import { TestimonialsSection } from '@/components/sections/TestimonialsSection'
 import { ContactSection } from '@/components/sections/ContactSection'
 import { NowPlayingBar } from '@/components/ui/NowPlayingBar'
-import { getSiteConfig, getMusic, getEvents, getMerch, getHistory, getTestimonials } from '@/lib/content'
+import {
+  getSiteConfig,
+  getMusic,
+  getEvents,
+  getMerch,
+  getHistory,
+  getServices,
+  getTestimonials,
+} from '@/lib/content'
 
 export default async function HomePage() {
   const siteConfig = await getSiteConfig()
+  const services = await getServices()
   const music = await getMusic()
   const events = await getEvents()
   const merch = await getMerch()
@@ -20,13 +30,14 @@ export default async function HomePage() {
   return (
     <>
       <Hero siteConfig={siteConfig} />
-      <MusicSection music={music} />
+      <ServicesSection services={services} />
       <EventsSection events={events} />
-      <MerchSection merch={merch} />
-      <HistorySection history={history} />
+      <MusicSection music={music} />
       <GallerySection />
+      <HistorySection history={history} />
       <TestimonialsSection testimonials={testimonials} />
-      <ContactSection />
+      <MerchSection merch={merch} />
+      <ContactSection siteConfig={siteConfig} />
       <NowPlayingBar nowPlaying={music.nowPlaying} />
     </>
   )

@@ -6,6 +6,7 @@ import type {
   EventsContent,
   MerchContent,
   HistoryContent,
+  ServicesContent,
   TestimonialsContent,
 } from '@/types/content'
 
@@ -58,6 +59,10 @@ export async function getMerch(): Promise<MerchContent> {
 
 export async function getHistory(): Promise<HistoryContent> {
   return loadJSON<HistoryContent>('history.json')
+}
+
+export async function getServices(): Promise<ServicesContent> {
+  return loadJSON<ServicesContent>('services.json')
 }
 
 export async function getTestimonials(): Promise<TestimonialsContent> {

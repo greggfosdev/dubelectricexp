@@ -92,7 +92,7 @@ export function NowPlayingBar({ nowPlaying }: NowPlayingBarProps) {
               scrolling="no"
               frameBorder="no"
               allow="autoplay"
-              src={isExpanded ? getEmbedUrl(nowPlaying.url) : ''}
+              src={isExpanded ? getEmbedUrl(nowPlaying.url) : undefined}
               className="w-full rounded-lg"
             />
           </div>

@@ -10,7 +10,7 @@ export function Ticker({ nextEvent }: TickerProps) {
       <div className="w-full bg-border/30 py-3">
         <div className="mx-auto max-w-7xl px-4 lg:px-6">
           <p className="text-center text-sm text-muted">
-            No upcoming events posted — follow for updates
+            No upcoming events posted. Follow for updates
           </p>
         </div>
       </div>

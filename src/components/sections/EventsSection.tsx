@@ -70,7 +70,7 @@ export function EventsSection({ events }: EventsSectionProps) {
             </div>
           ) : (
             <p className="text-center text-muted py-8">
-              No upcoming events posted — follow for updates
+              No upcoming events posted. Follow for updates
             </p>
           )}
 

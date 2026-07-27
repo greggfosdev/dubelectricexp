@@ -1,5 +1,10 @@
 {
-  "intro": "Dub Electric is Dub Plates. Beats. Electronic Music.",
-  "story": "Founded in 2015 by Chris and Gregg, we leveled up in 2018 when Redman Chin became co-owner—same mission, bigger reach. In 2021 we built the sound system because the bass has to be real. We blend worlds on purpose and move with quality first, always.",
-  "milestones": []
+  "intro": "Dub Electric Experience is a DJ collective and event production company: dub plates, beats, and a sound system we built ourselves.",
+  "story": "Founded in 2015 by Chris and Gregg, with Redman Chin joining as co-owner in 2018. In 2021 we built our own sound system because the bass has to be real. That rig grew into a full production operation: pro audio, LED walls, and lighting for weddings, corporate events, festivals, and the dances we came up in. Ten years on, the mission hasn't moved: quality first, always.",
+  "milestones": [
+    { "year": "2015", "text": "Founded in NYC by Chris and Gregg" },
+    { "year": "2018", "text": "Redman Chin joins as co-owner" },
+    { "year": "2021", "text": "Built our own sound system" },
+    { "year": "Today", "text": "Full production: sound, LED walls & lighting, East Coast to worldwide" }
+  ]
 }

@@ -1,0 +1,52 @@
+{
+  "services": [
+    {
+      "id": "dj",
+      "icon": "disc-3",
+      "title": "DJ Experiences",
+      "description": "Selectors for weddings, corporate events, private parties, clubs, festivals, and cultural celebrations. Open format to strictly vibes: reggae, dancehall, soca, hip-hop, afrobeats and beyond.",
+      "bullets": [
+        "Weddings & private events",
+        "Corporate & brand events",
+        "Clubs, festivals & fetes",
+        "MC + curated sets"
+      ],
+      "cta": {
+        "label": "Book a DJ",
+        "inquiryType": "dj"
+      }
+    },
+    {
+      "id": "production",
+      "icon": "speaker",
+      "title": "Sound & Event Production",
+      "description": "Our own professional sound system, engineers included. Full production for concerts, festivals, weddings, and corporate functions. If it needs to be loud and clean, it's us.",
+      "bullets": [
+        "Pro sound system + engineers",
+        "Stage support & wireless mics",
+        "Power distribution",
+        "Full event production"
+      ],
+      "cta": {
+        "label": "Book Production",
+        "inquiryType": "production"
+      }
+    },
+    {
+      "id": "led",
+      "icon": "monitor-play",
+      "title": "LED Walls & Lighting",
+      "description": "LED video walls, lighting design, and the visual layer that makes an event feel big.",
+      "bullets": [
+        "LED video walls",
+        "Lighting design",
+        "DJ booths & visuals",
+        "Rentals with or without crew"
+      ],
+      "cta": {
+        "label": "Get a Quote",
+        "inquiryType": "production"
+      }
+    }
+  ]
+}

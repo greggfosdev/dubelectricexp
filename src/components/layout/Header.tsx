@@ -6,13 +6,14 @@ import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 import { MobileNav } from './MobileNav'
 
-const navLinks = [
-  { href: '#music', label: 'Music' },
+const navLinks: Array<{ href: string; label: string; variant?: 'cta' }> = [
+  { href: '#services', label: 'Services' },
   { href: '#events', label: 'Events' },
-  { href: '#merch', label: 'Merch' },
-  { href: '#history', label: 'History' },
+  { href: '#music', label: 'Mixes' },
   { href: '#gallery', label: 'Gallery' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#history', label: 'Story' },
+  { href: '#merch', label: 'Merch' },
+  { href: '#contact', label: 'Book Now', variant: 'cta' },
 ]
 
 export function Header() {
@@ -70,7 +71,11 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="text-sm font-semibold text-foreground hover:text-accent transition-all cursor-pointer uppercase tracking-wide hover:scale-105"
+                  className={
+                    link.variant === 'cta'
+                      ? 'px-4 py-2 text-sm font-bold bg-accent text-background rounded-lg uppercase tracking-wide hover:bg-accent/90 hover:scale-105 transition-all cursor-pointer'
+                      : 'text-sm font-semibold text-foreground hover:text-accent transition-all cursor-pointer uppercase tracking-wide hover:scale-105'
+                  }
                 >
                   {link.label}
                 </a>

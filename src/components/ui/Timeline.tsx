@@ -20,7 +20,7 @@ export function Timeline({ milestones }: TimelineProps) {
           </div>
 
           {/* Content */}
-          <div className="flex-1 pb-8">
+          <div className="flex-1">
             <div className="flex items-baseline gap-3 mb-2">
               <time className="text-xl font-bold text-accent">
                 {milestone.year}

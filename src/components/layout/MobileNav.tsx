@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 interface MobileNavProps {
   isOpen: boolean
   onClose: () => void
-  navLinks: Array<{ href: string; label: string }>
+  navLinks: Array<{ href: string; label: string; variant?: 'cta' }>
   onNavClick: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void
 }
 
@@ -41,7 +41,11 @@ export function MobileNav({ isOpen, onClose, navLinks, onNavClick }: MobileNavPr
               key={link.href}
               href={link.href}
               onClick={(e) => onNavClick(e, link.href)}
-              className="text-2xl font-medium text-foreground hover:text-accent transition-colors cursor-pointer"
+              className={
+                link.variant === 'cta'
+                  ? 'px-8 py-4 bg-accent text-background rounded-lg text-2xl font-bold hover:bg-accent/90 transition-all cursor-pointer'
+                  : 'text-2xl font-medium text-foreground hover:text-accent transition-colors cursor-pointer'
+              }
             >
               {link.label}
             </a>

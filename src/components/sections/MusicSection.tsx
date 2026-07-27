@@ -8,7 +8,7 @@ interface MusicSectionProps {
 
 export function MusicSection({ music }: MusicSectionProps) {
   return (
-    <Section id="music" className="bg-background">
+    <Section id="music" className="bg-border/10">
       <div className="space-y-12">
         {/* Section Header */}
         <div className="text-center space-y-6">

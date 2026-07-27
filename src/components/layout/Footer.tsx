@@ -23,6 +23,12 @@ export function Footer({ siteConfig }: FooterProps) {
             style={{ filter: 'brightness(0) invert(1)' }}
           />
 
+          {/* Tagline & Service Area */}
+          <div className="space-y-1">
+            <p className="text-sm text-muted max-w-md">{siteConfig.tagline}</p>
+            <p className="text-sm font-medium text-accent">{siteConfig.location}</p>
+          </div>
+
           {/* Social Links */}
           <div className="flex items-center gap-6 flex-wrap justify-center">
             <a
@@ -65,7 +71,7 @@ export function Footer({ siteConfig }: FooterProps) {
             </a>
           </div>
 
-          {/* Booking Email */}
+          {/* Booking Contact */}
           <p className="text-sm text-muted">
             For bookings:{' '}
             <a
@@ -73,6 +79,13 @@ export function Footer({ siteConfig }: FooterProps) {
               className="text-foreground hover:text-accent transition-colors"
             >
               {siteConfig.social.email}
+            </a>{' '}
+            •{' '}
+            <a
+              href={`tel:${siteConfig.booking.phone.replace(/[^+\d]/g, '')}`}
+              className="text-foreground hover:text-accent transition-colors"
+            >
+              {siteConfig.booking.contactName}: {siteConfig.booking.phone}
             </a>
           </p>
 

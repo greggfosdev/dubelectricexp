@@ -52,7 +52,7 @@ export function PhotoGallery({ photos }: PhotoGalleryProps) {
             <p className="text-xl font-bold text-foreground mb-2">
               "Dub Plates. Beats. Electronic Music."
             </p>
-            <p className="text-sm text-muted">— Dub Electric</p>
+            <p className="text-sm text-muted">- Dub Electric</p>
           </div>
         </div>
 

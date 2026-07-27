@@ -1,3 +1,5 @@
+import type { InquiryType } from './contact'
+
 export interface SiteConfig {
   name: string
   tagline: string
@@ -13,6 +15,10 @@ export interface SiteConfig {
   cta: {
     listenUrl: string
     bookAnchor: string
+  }
+  booking: {
+    contactName: string
+    phone: string
   }
 }
 
@@ -79,15 +85,20 @@ export interface HistoryContent {
   milestones: HistoryMilestone[]
 }
 
-export interface ContactFormData {
-  name: string
-  email: string
-  phone?: string
-  eventDate?: string
-  cityVenue?: string
-  budgetRange?: string
-  message: string
-  company?: string // honeypot
+export interface ServiceItem {
+  id: string
+  icon: string // lucide icon key, resolved in ServiceCard
+  title: string
+  description: string
+  bullets: string[]
+  cta: {
+    label: string
+    inquiryType: InquiryType
+  }
+}
+
+export interface ServicesContent {
+  services: ServiceItem[]
 }
 
 export interface Testimonial {

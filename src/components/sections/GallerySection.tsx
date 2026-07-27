@@ -18,7 +18,7 @@ const photos = [
 
 export function GallerySection() {
   return (
-    <Section id="gallery" className="bg-border/10">
+    <Section id="gallery" className="bg-background">
       <div className="space-y-12">
         {/* Section Header */}
         <div className="text-center space-y-6">
@@ -32,7 +32,7 @@ export function GallerySection() {
             MOMENTS
           </h2>
           <p className="text-lg md:text-xl text-muted max-w-2xl mx-auto">
-            From the sessions to the stages—catch the vibe.
+            From the sessions to the stages, catch the vibe.
           </p>
         </div>
 

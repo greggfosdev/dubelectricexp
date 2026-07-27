@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { getSiteConfig } from '@/lib/content'
+import { getServices, getSiteConfig } from '@/lib/content'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,27 +19,29 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dubelectricexp.com'
 
 export const metadata: Metadata = {
   title: {
-    default: "Dub Electric — Dancehall & Reggae DJ Collective",
+    default: "Dub Electric Experience | DJs, Sound & Event Production",
     template: "%s | Dub Electric"
   },
-  description: "Dub Electric is a dancehall and reggae DJ collective rooted in sound system culture. Stream our latest mixes on SoundCloud, catch us live at events, and book us for your next session.",
+  description: "Full-service DJ and event production company: pro sound systems, LED walls, and lighting for weddings, corporate events, festivals, nightlife, and Caribbean celebrations. East Coast based, traveling worldwide.",
   keywords: [
     "Dub Electric",
+    "Dub Electric Experience",
+    "event production",
+    "DJ services",
+    "wedding DJ",
+    "corporate event DJ",
+    "sound system rental",
+    "LED wall rental",
+    "event lighting",
+    "festival production",
     "dancehall DJ",
     "reggae DJ",
-    "sound system",
-    "DJ collective",
-    "dancehall music",
-    "reggae music",
-    "Atlanta DJ",
-    "Florida DJ",
-    "Belize events",
-    "Caribbean music",
-    "bashment",
-    "roots reggae",
+    "soca",
+    "Caribbean events",
+    "sound system culture",
+    "East Coast DJ",
     "DJ booking",
     "live events",
-    "SoundCloud DJ",
   ],
   authors: [{ name: "Dub Electric" }],
   creator: "Dub Electric",
@@ -52,22 +54,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    title: "Dub Electric — Dancehall & Reggae DJ Collective",
-    description: "Dancehall and reggae DJ collective rooted in sound system culture. Stream our latest mixes, catch us live, and book us for your next event.",
+    title: "Dub Electric Experience | DJs, Sound & Event Production",
+    description: "Full-service DJ and event production: pro sound systems, LED walls, and lighting for weddings, corporate events, festivals, nightlife, and Caribbean celebrations. East Coast based, traveling worldwide.",
     siteName: "Dub Electric",
     images: [
       {
         url: `${siteUrl}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: "Dub Electric - Dancehall & Reggae Sound System",
+        alt: "Dub Electric Experience | DJs, Sound & Event Production",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dub Electric — Dancehall & Reggae DJ Collective",
-    description: "Dancehall and reggae DJ collective rooted in sound system culture. Stream our latest mixes, catch us live, and book us.",
+    title: "Dub Electric Experience | DJs, Sound & Event Production",
+    description: "DJs, pro sound, LED walls & event production, rooted in sound system culture. East Coast based, traveling worldwide.",
     images: [`${siteUrl}/og-image.jpg`],
     creator: "@dubelectricexp",
   },
@@ -97,34 +99,77 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const siteConfig = await getSiteConfig()
+  const services = await getServices()
 
-  // JSON-LD Schema for Music Group
+  const socialProfiles = [
+    siteConfig.social.soundcloud,
+    siteConfig.social.instagram,
+    siteConfig.social.facebook,
+    siteConfig.social.tiktok,
+  ]
+  const businessId = `${siteUrl}/#business`
+  const musicGroupId = `${siteUrl}/#musicgroup`
+
+  // JSON-LD: the business is the primary entity; the DJ collective is a linked
+  // sub-organization so the music identity stays represented.
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'MusicGroup',
-    name: 'Dub Electric',
-    alternateName: 'Dub Electric EXP',
-    description: 'Dancehall and reggae DJ collective rooted in sound system culture',
-    url: siteUrl,
-    genre: ['Dancehall', 'Reggae', 'Caribbean', 'Bashment', 'Roots Reggae'],
-    foundingDate: '2015',
-    foundingLocation: {
-      '@type': 'Place',
-      name: 'NYC',
-    },
-    sameAs: [
-      siteConfig.social.soundcloud,
-      siteConfig.social.instagram,
-      siteConfig.social.facebook,
-      siteConfig.social.tiktok,
+    '@graph': [
+      {
+        '@type': 'LocalBusiness',
+        '@id': businessId,
+        name: 'Dub Electric Experience',
+        alternateName: ['Dub Electric', 'Dub Electric EXP'],
+        description:
+          'Full-service DJ and event production company: professional sound systems, LED video walls, and lighting for weddings, corporate events, festivals, nightlife, and Caribbean celebrations. Rooted in sound system culture. Based on the East Coast, traveling worldwide.',
+        url: siteUrl,
+        logo: `${siteUrl}/logo.png`,
+        image: `${siteUrl}/og-image.jpg`,
+        email: siteConfig.social.email,
+        foundingDate: '2015',
+        areaServed: {
+          '@type': 'Place',
+          name: 'East Coast, United States',
+        },
+        contactPoint: {
+          '@type': 'ContactPoint',
+          contactType: 'Bookings',
+          email: siteConfig.social.email,
+          url: `${siteUrl}/#contact`,
+        },
+        sameAs: socialProfiles,
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: 'Event Services',
+          itemListElement: services.services.map((service) => ({
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: service.title,
+              description: service.description,
+            },
+          })),
+        },
+        subOrganization: { '@id': musicGroupId },
+      },
+      {
+        '@type': 'MusicGroup',
+        '@id': musicGroupId,
+        name: 'Dub Electric',
+        alternateName: 'Dub Electric EXP',
+        description: 'Dancehall and reggae DJ collective rooted in sound system culture',
+        url: siteUrl,
+        genre: ['Dancehall', 'Reggae', 'Caribbean', 'Bashment', 'Roots Reggae'],
+        foundingDate: '2015',
+        foundingLocation: {
+          '@type': 'Place',
+          name: 'NYC',
+        },
+        sameAs: socialProfiles,
+        image: `${siteUrl}/og-image.jpg`,
+        parentOrganization: { '@id': businessId },
+      },
     ],
-    contactPoint: {
-      '@type': 'ContactPoint',
-      email: siteConfig.social.email,
-      contactType: 'Bookings',
-    },
-    logo: `${siteUrl}/logo.png`,
-    image: `${siteUrl}/og-image.jpg`,
   }
 
   return (
@@ -132,7 +177,7 @@ export default async function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
         />
       </head>
       <body

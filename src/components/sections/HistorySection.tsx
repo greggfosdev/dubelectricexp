@@ -1,4 +1,5 @@
 import { Section } from '@/components/ui/Section'
+import { Timeline } from '@/components/ui/Timeline'
 import type { HistoryContent } from '@/types/content'
 
 interface HistorySectionProps {
@@ -7,7 +8,7 @@ interface HistorySectionProps {
 
 export function HistorySection({ history }: HistorySectionProps) {
   return (
-    <Section id="history" className="bg-background">
+    <Section id="history" className="bg-border/10">
       <div className="space-y-12">
         {/* Section Header */}
         <div className="text-center space-y-6">
@@ -31,6 +32,13 @@ export function HistorySection({ history }: HistorySectionProps) {
             {history.story}
           </p>
         </div>
+
+        {/* Milestones */}
+        {history.milestones.length > 0 && (
+          <div className="max-w-2xl mx-auto pt-4">
+            <Timeline milestones={history.milestones} />
+          </div>
+        )}
       </div>
     </Section>
   )

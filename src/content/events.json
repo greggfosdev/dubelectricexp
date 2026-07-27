@@ -1,22 +1,111 @@
 {
   "upcoming": [
     {
-      "id": "event-2026-01-10",
-      "date": "2026-01-10",
-      "title": "One Mission 6 Year Anniversary - Anything Can Gwaan",
-      "city": "Lithonia, GA",
-      "venue": "The Base",
-      "ticketUrl": "",
-      "note": "Doors 9PM • $25"
+      "id": "event-2026-08-01-summer-freeze",
+      "date": "2026-08-01",
+      "title": "Summer Freeze",
+      "city": "Tampa, FL",
+      "venue": "",
+      "ticketUrl": ""
     },
     {
-      "id": "event-2026-01-24",
-      "date": "2026-01-24",
-      "title": "Open The Boxx - Xclusive Edition",
-      "city": "Lithonia, GA",
-      "venue": "The Base",
-      "ticketUrl": "",
-      "note": "All Black Wear Attire"
+      "id": "event-2026-08-01-summer-swing",
+      "date": "2026-08-01",
+      "title": "Summer Swing",
+      "city": "Rochester, NY",
+      "venue": "",
+      "ticketUrl": ""
+    },
+    {
+      "id": "event-2026-08-08-livies-family-day",
+      "date": "2026-08-08",
+      "title": "Livie's Family Day",
+      "city": "Rochester, NY",
+      "venue": "",
+      "ticketUrl": ""
+    },
+    {
+      "id": "event-2026-08-09-badman-good-girl",
+      "date": "2026-08-09",
+      "title": "Badman & Good Girl",
+      "city": "Tampa, FL",
+      "venue": "",
+      "ticketUrl": ""
+    },
+    {
+      "id": "event-2026-08-15-golden-seduction",
+      "date": "2026-08-15",
+      "title": "Golden Seduction",
+      "city": "Tampa, FL",
+      "venue": "",
+      "ticketUrl": ""
+    },
+    {
+      "id": "event-2026-08-16-double-shift",
+      "date": "2026-08-16",
+      "title": "Double Shift",
+      "city": "Orlando, FL",
+      "venue": "",
+      "ticketUrl": ""
+    },
+    {
+      "id": "event-2026-08-23-ace-of-diamond",
+      "date": "2026-08-23",
+      "title": "Ace of Diamond",
+      "city": "Tampa, FL",
+      "venue": "",
+      "ticketUrl": ""
+    },
+    {
+      "id": "event-2026-08-29-sound-system-showcase",
+      "date": "2026-08-29",
+      "title": "Sound System Showcase",
+      "city": "Atlanta, GA",
+      "venue": "",
+      "ticketUrl": ""
+    },
+    {
+      "id": "event-2026-08-30-baddies-ballers",
+      "date": "2026-08-30",
+      "title": "Baddies & Ballers",
+      "city": "Tampa, FL",
+      "venue": "",
+      "ticketUrl": ""
+    }
+  ],
+  "archive": [
+    {
+      "id": "event-2026-07-25-zip-it-up",
+      "date": "2026-07-25",
+      "title": "Zip It Up Day Party",
+      "city": "Orlando, FL",
+      "venue": "",
+      "ticketUrl": ""
+    },
+    {
+      "id": "event-2026-07-25-hip-hop-dancehall",
+      "date": "2026-07-25",
+      "title": "Hip Hop & Dancehall",
+      "city": "Kissimmee, FL",
+      "venue": "",
+      "ticketUrl": ""
+    },
+    {
+      "id": "event-2026-07-24-private-event",
+      "date": "2026-07-24",
+      "title": "Private Event",
+      "city": "Kissimmee, FL",
+      "venue": "",
+      "ticketUrl": ""
+    },
+    {
+      "id": "event-2026-03-06",
+      "date": "2026-03-06",
+      "title": "Destination Paradise Weekend 2026",
+      "city": "Belize City & San Pedro",
+      "venue": "Belize",
+      "ticketUrl": "https://destinationparadisebelize.eventbrite.com",
+      "note": "March 6-8 • Weekend Passes Available"
     },
     {
       "id": "event-2026-01-30",
@@ -28,14 +117,22 @@
       "note": "9PM - 2AM • Free Entry"
     },
     {
-      "id": "event-2026-03-06",
-      "date": "2026-03-06",
-      "title": "Destination Paradise Weekend 2026",
-      "city": "Belize City & San Pedro",
-      "venue": "Belize",
-      "ticketUrl": "https://destinationparadisebelize.eventbrite.com",
-      "note": "March 6-8 • Weekend Passes Available"
+      "id": "event-2026-01-24",
+      "date": "2026-01-24",
+      "title": "Open The Boxx - Xclusive Edition",
+      "city": "Lithonia, GA",
+      "venue": "The Base",
+      "ticketUrl": "",
+      "note": "All Black Wear Attire"
+    },
+    {
+      "id": "event-2026-01-10",
+      "date": "2026-01-10",
+      "title": "One Mission 6 Year Anniversary - Anything Can Gwaan",
+      "city": "Lithonia, GA",
+      "venue": "The Base",
+      "ticketUrl": "",
+      "note": "Doors 9PM • $25"
     }
-  ],
-  "archive": []
+  ]
 }

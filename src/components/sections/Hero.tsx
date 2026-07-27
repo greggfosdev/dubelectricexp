@@ -71,24 +71,24 @@ export function Hero({ siteConfig }: HeroProps) {
       <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
         {/* Headline */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground drop-shadow-2xl">
-          Dub Electric — high-energy selections built for real sound.
+          DJs, pro sound &amp; event production, built on sound system culture.
         </h1>
 
         {/* Subcopy */}
         <p className="text-lg md:text-xl text-muted max-w-2xl mx-auto drop-shadow-lg">
-          Music, events, and culture from the collective. Tap in, catch us live, or book a session.
+          From weddings and corporate events to festivals, nightlife, and Caribbean
+          celebrations, Dub Electric brings the music, the system, and the crew to make it move.
         </p>
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
           {/* Primary CTA */}
           <a
-            href={siteConfig.cta.listenUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={siteConfig.cta.bookAnchor}
+            onClick={handleBookClick}
             className="group inline-flex items-center justify-center px-8 py-4 text-base font-medium bg-accent text-background rounded-lg hover:bg-accent/90 transition-all hover:scale-105 active:scale-95 w-full sm:w-auto shadow-lg hover:shadow-accent/50"
           >
-            <span className="group-hover:mr-2 transition-all">Listen on SoundCloud</span>
+            <span className="group-hover:mr-2 transition-all">Plan Your Event</span>
             <svg className="w-0 group-hover:w-5 transition-all overflow-hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
@@ -96,11 +96,12 @@ export function Hero({ siteConfig }: HeroProps) {
 
           {/* Secondary CTA */}
           <a
-            href={siteConfig.cta.bookAnchor}
-            onClick={handleBookClick}
+            href={siteConfig.cta.listenUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 text-base font-medium border-2 border-accent text-foreground rounded-lg hover:bg-accent hover:text-background transition-all hover:scale-105 active:scale-95 w-full sm:w-auto shadow-lg"
           >
-            Book Us
+            Listen to Our Mixes
           </a>
         </div>
       </div>
